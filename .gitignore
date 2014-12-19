@@ -1,0 +1,4 @@
+node_modules
+app/ui5
+.env
+bower.json
