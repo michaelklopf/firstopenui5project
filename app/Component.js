@@ -35,9 +35,60 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.app.Component", {
     	},
 
     	// routing part obviously
+        // is part of step 3 of the tutorial
+        // router is initialized in init function below
     	routing: {
-        	// will be done in part 3 of the tutorial
+    		config: {
+    			// custom router class
+    			routerClass : sap.ui.demo.app.MyRouter,
+    			// xml views
+    			viewType : "XML",
+    			// absolute path to views
+    			viewPath : "sap.ui.demo.app.view",
+    			// unless stated otherwise, router places view in detail part
+    			targetAggregation : "detailPages",
+    			// don't clear the detail pages before views are added
+    			clearTarget : false
+    		},
+
+    		// note that routes are defined in array
+    		routes : [
+    			// routing of the main part of the application
+    			{
+    				pattern : "",
+    				name : "main",
+    				// placed in master masterPages aggregation of splitapp
+    				view : "Master",
+    				targetAggregation : "masterPages",
+    				targetControl : "idAppControl",
+    				// places detail in detailPages aggreg. of the splitapp
+    				subroutes : [
+    					{
+    						// product context is expected
+    						// and which tab should be selected (supplier/category)
+    						pattern : "{product}/:tab:",
+    						name : "product",
+    						view : "Detail"
+    					}
+    				]
+    			},
+    			// catchall routes, to show not found message, when route is not valid
+    			{
+    				name : "catchallMaster",
+    				view : "Master",
+    				targetAggregation : "masterPages",
+    				targetControl : "idAppControl",
+    				subroutes : [
+    					{
+    						pattern : ":all*:",
+    						name : "catchallDetail",
+    						view : "NotFound"
+    					}
+    				]
+    			}
+    		]
     	}
+    	// custom routing is performed in MyRouter.js
     },
 
   	init : function() {
@@ -56,7 +107,7 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.app.Component", {
         this.setModel(i18nModel, "i18n");
         
         // Create and set domain model to the component
-        // - taken from above service config
+        // - taken from above service config above
         var sServiceUrl = mConfig.serviceConfig.serviceUrl;
         var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
         this.setModel(oModel);

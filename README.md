@@ -1,4 +1,5 @@
-A sample web application to start a simple OpenUI5 app.
+A sample web application based on OpenUI5 tutorial from developer guide.  
+https://openui5.hana.ondemand.com/#docs/guide/b4d66ebee72645c1a3501a769e935541.html
 
 Including
 ===
