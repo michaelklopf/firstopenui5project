@@ -39,3 +39,10 @@ Start the webserver with typing the following into the console:
 
 In your browser, you can reach the application via:  
 >http://localhost:9999
+
+Known Issues  
+===
+The console will always show this message:  
+>GET http://localhost:6090/app/Component-preload.js 404 (Not Found)
+
+It's a result of the build process SAP is using, and will probably vanish in future versions of Open UI5. It can be ignored.
