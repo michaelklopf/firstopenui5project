@@ -51,6 +51,6 @@ It's a result of the build process SAP is using, and will probably vanish in fut
 
 OData service errors should be prevented by starting Chrome with the arguments --disable-web-security  
 
-Like this in your PowerShell  
+Start Chrome like this in your PowerShell  
 cd 'C:\Program Files (x86)\Google\Chrome\Application'
 ./chrome.exe --disable-web-security
