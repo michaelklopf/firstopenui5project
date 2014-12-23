@@ -47,7 +47,7 @@
 						text="{i18n>iconTabFilterSupplier}"
 						icon="sap-icon://supplier">
 						<content>
-							<!--core:Fragment fragmentName="sap.ui.demo.app.view.SupplierAddressForm" type="XML" /-->
+							<core:Fragment fragmentName="sap.ui.demo.app.view.SupplierAddressForm" type="XML" />
 						</content>
 					</IconTabFilter>
 					<IconTabFilter
@@ -55,7 +55,7 @@
 						text="{i18n>iconTabFilterCategory}"
 						icon="sap-icon://hint">
 						<content>
-							<!--core:Fragment fragmentName="sap.ui.demo.app.view.CategoryInfoForm" type="XML" /-->
+							<core:Fragment fragmentName="sap.ui.demo.app.view.CategoryInfoForm" type="XML" />
 						</content>
 					</IconTabFilter>
 				</items>

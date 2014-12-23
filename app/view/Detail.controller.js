@@ -27,7 +27,7 @@ sap.ui.core.mvc.Controller.extend("sap.ui.demo.app.view.Detail", {
 				// Make sure the master is here
 				var oIconTabBar = oView.byId("idIconTabBar");
 				oIconTabBar.getItems().forEach(function(oItem) {
-					oItem.bindElement(sap.ui.demo.tdg.util.Formatter.uppercaseFirstChar(oItem.getKey()));
+					oItem.bindElement(sap.ui.demo.app.util.Formatter.uppercaseFirstChar(oItem.getKey()));
 				});
 
 				// Which tab?
@@ -50,5 +50,5 @@ sap.ui.core.mvc.Controller.extend("sap.ui.demo.app.view.Detail", {
 			tab: oEvent.getParameter("selectedKey")
 		}, true);
 	}
-	
+
 });
