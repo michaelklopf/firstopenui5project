@@ -1,6 +1,6 @@
 jQuery.sap.declare("sap.ui.demo.app.util.Formatter");
 
-sap.ui.demo.tdg.util.Formatter = {
+sap.ui.demo.app.util.Formatter = {
 
 	uppercaseFirstChar : function(lowerCaseString) {
 		return lowerCaseString.charAt(0).toUpperCase()
